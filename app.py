@@ -1,12 +1,12 @@
 import streamlit as st
 
-def calculate_lng_rate(brent_price_avg, brent_to_lng_percent):
+def calculate_lng_rate(brent_price_avg, brent_to_lng_percent=16.65):
     """
     Calculate LNG Rate in $/MMBTU based on Brent crude oil price and Brent to LNG percentage.
 
     Parameters:
     brent_price_avg (float): Average Brent crude oil price in $/bbl.
-    brent_to_lng_percent (float): Percentage to convert Brent price to LNG rate.
+    brent_to_lng_percent (float): Fixed percentage to convert Brent price to LNG rate (default: 16.65%).
 
     Returns:
     float: LNG rate in $/MMBTU.
@@ -17,14 +17,9 @@ def calculate_lng_rate(brent_price_avg, brent_to_lng_percent):
 # Streamlit app
 st.title("LNG Sale Price Calculator")
 st.write("""
-This app calculates the LNG (Liquefied Natural Gas) sale price based on Brent crude oil prices and a conversion percentage.
+This app calculates the LNG (Liquefied Natural Gas) sale price based on Brent crude oil prices.
+The Brent to LNG conversion percentage is fixed at **16.65%**.
 """)
-
-# Input: Conversion percentage
-brent_to_lng_percent = st.number_input(
-    "Enter the Brent to LNG conversion percentage (%)",
-    min_value=0.0, max_value=100.0, value=12.5, step=0.1
-)
 
 # Input: Data for last three months
 st.subheader("Enter Brent Crude Oil Prices")
@@ -47,7 +42,7 @@ if len(data) == 3:
     brent_price_avg = sum(price for _, price in data) / len(data)
     
     # Calculate LNG rate
-    lng_rate = calculate_lng_rate(brent_price_avg, brent_to_lng_percent)
+    lng_rate = calculate_lng_rate(brent_price_avg)
     
     # Display input data
     st.write("### Input Data")
