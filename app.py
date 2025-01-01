@@ -17,7 +17,7 @@ def calculate_lng_rate(brent_price_avg, brent_to_lng_percent=16.65):
 # Streamlit app
 st.title("LNG Sale Price Calculator")
 st.write("""
-This app calculates the LNG (Liquefied Natural Gas) sale price based on Brent crude oil prices.
+This app calculates the LNG (Liquefied Natural Gas) in $/mmbtu sale price based on Brent crude oil prices.
 
 """)
 
