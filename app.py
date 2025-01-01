@@ -55,4 +55,4 @@ if len(data) == 3:
     st.write(f"**Average Brent Price:** ${brent_price_avg:.4f} per barrel")
     st.write(f"**LNG Rate:** ${lng_rate:.4f} per MMBTU")
 else:
-    st.info("Please enter data for all three months to calculate the LNG rate.")
+    st.info("Please enter data for all three months to calculate the LNG Sale Price.")
