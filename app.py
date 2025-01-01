@@ -18,7 +18,7 @@ def calculate_lng_rate(brent_price_avg, brent_to_lng_percent=16.65):
 st.title("LNG Sale Price Calculator")
 st.write("""
 This app calculates the LNG (Liquefied Natural Gas) sale price based on Brent crude oil prices.
-The Brent to LNG conversion percentage is fixed at **16.65%**.
+
 """)
 
 # Input: Data for last three months
